@@ -45,7 +45,7 @@ LOCALE_PATHS = [str(BASE_DIR / "locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {"default": env.db("DATABASE_URL", default="postgres:///crm")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 DATABASES["default"]["NAME"] = "crm"
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-DEFAULT_AUTO_FIELD
@@ -86,7 +86,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "crm.users",
-    # Your stuff: custom apps go here
+    "crm.sales",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
