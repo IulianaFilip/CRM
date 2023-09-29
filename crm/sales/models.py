@@ -17,9 +17,6 @@ class Leads(models.Model):
     def __str__(self):
         return self.lead
 
-    class Meta:
-        app_label = "crm.sales"
-
 
 class Contacts(models.Model):
     contact = models.CharField(max_length=100)
