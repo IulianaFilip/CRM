@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <!-- Bootstrap CSS is assumed to be included in base.html -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3"  id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light text-center">Meniu</div>
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link"
+             id="nav-leads-tab"
+             data-toggle="tab"
+             href="#leadsTable"
+             role="tab"
+             aria-controls="leadsTable"
+             aria-selected="true">Leads</a>
+          <a class="nav-link"
+             id="nav-contacts-tab"
+             data-toggle="tab"
+             href="#contactsTable"
+             role="tab"
+             aria-controls="contactsTable"
+             aria-selected="false">Contacts</a>
+          <a class="nav-link"
+             id="nav-accounts-tab"
+             data-toggle="tab"
+             href="#accountsTable"
+             role="tab"
+             aria-controls="accountsTable"
+             aria-selected="false">Accounts</a>
+          <a class="nav-link"
+             id="nav-deals-tab"
+             data-toggle="tab"
+             href="#dealsTable"
+             role="tab"
+             aria-controls="dealsTable"
+             aria-selected="false">Deals</a>
+          <a class="nav-link"
+             id="nav-dashboard-tab"
+             data-toggle="tab"
+             href="#dashboardTable"
+             role="tab"
+             aria-controls="dashboardTable"
+             aria-selected="false">Dashboard</a>
+        </nav>
+      </div>
+      <div class="col-md-9" id="content-wrapper">
+        <!-- Leads Table -->
+        <div id="leadsTable" class="table-responsive">
+          <h2>Leads</h2>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Lead</th>
+                <th scope="col">Status</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for lead in leads %}
+                <tr>
+                  <td>{{ lead.lead }}</td>
+                  <td>{{ lead.get_status_display }}</td>
+                  <td>{{ lead.email }}</td>
+                  <td>{{ lead.phone }}</td>
+                  <td>{{ lead.owner }}</td>
+                  <td>
+                    <!-- You can place an Edit button here if you want to edit the lead -->
+                  </td>
+                </tr>
+              {% endfor %}
+              <tr>
+                <td>
+                  <input type="text" class="form-control" placeholder="Add Lead" />
+                </td>
+                <td>
+                  <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="newLeadStatus">
+                      <option selected>Choose...</option>
+                      <option value="New">New</option>
+                      <option value="Contacted">Contacted</option>
+                      <option value="Converted">Converted</option>
+                      <option value="Lost">Lost</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <input type="email" class="form-control" placeholder="Email" />
+                </td>
+                <td>
+                  <input type="tel" class="form-control" placeholder="Phone" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Owner" />
+                </td>
+                <td>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Contacts Table -->
+        <div id="contactsTable" class="table-responsive d-none">
+          <h2>Contacts</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Contact</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Priority</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for contact in contacts %}
+                <tr>
+                  <td>{{ contact.contact }}</td>
+                  <td>{{ contact.email }}</td>
+                  <td>{{ contact.phone }}</td>
+                  <td>{{ contact.get_priority_display }}</td>
+                </tr>
+              {% endfor %}
+              <tr>
+                <td>
+                  <input type="text" class="form-control" placeholder="Add Contact" />
+                </td>
+                <td>
+                  <input type="email" class="form-control" placeholder="Email" />
+                </td>
+                <td>
+                  <input type="tel" class="form-control" placeholder="Phone" />
+                </td>
+                <td>
+                  <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="newContactPriority">
+                      <option selected>Choose...</option>
+                      <option value="Low">Low</option>
+                      <option value="Medium">Medium</option>
+                      <option value="High">High</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Accounts Table -->
+        <div id="accountsTable" class="table-responsive d-none">
+          <h2>Accounts</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Account</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for account in accounts %}
+                <tr>
+                  <td>{{ account.account }}</td>
+                  <td>{{ account.email }}</td>
+                  <td>{{ account.phone }}</td>
+                </tr>
+              {% endfor %}
+              <tr>
+                <td>
+                  <input type="text" class="form-control" placeholder="Add Account" />
+                </td>
+                <td>
+                  <input type="email" class="form-control" placeholder="Email" />
+                </td>
+                <td>
+                  <input type="tel" class="form-control" placeholder="Phone" />
+                </td>
+                <td>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Deals Table -->
+        <div id="dealsTable" class="table-responsive d-none">
+          <h2>Deals</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Deal</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Account</th>
+                <th scope="col">Stage</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for deal in deals %}
+                <tr>
+                  <td>{{ deal.deal }}</td>
+                  <td>{{ deal.owner }}</td>
+                  <td>{{ deal.contact }}</td>
+                  <td>{{ deal.account }}</td>
+                  <td>{{ deal.get_stage_display }}</td>
+                  <td>{{ deal.value }}</td>
+                </tr>
+              {% endfor %}
+              <tr>
+                <td>
+                  <input type="text" class="form-control" placeholder="Add Deal" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Owner" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Contact" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" placeholder="Account" />
+                </td>
+                <td>
+                  <div class="col-auto my-1">
+                    <select class="custom-select mr-sm-2" id="newDealStage">
+                      <option selected>Choose...</option>
+                      <option value="Discovery">Discovery</option>
+                      <option value="Proposal">Proposal</option>
+                      <option value="Negotiation">Negotiation</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

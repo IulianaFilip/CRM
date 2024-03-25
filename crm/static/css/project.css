@@ -7,7 +7,114 @@
 }
 
 .alert-error {
-  color: #b94a48;
+  color: #b94a48 ;
   background-color: #f2dede;
   border-color: #eed3d7;
+}
+
+/* Ensures that the body starts with no margin and the rows are full width */
+
+body {
+  background-color: #393652;
+  color: #ffffff; /* Light text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+/* Sidebar styles */
+#sidebar-wrapper {
+  background-color: #393652;
+  min-height: 100vh;
+}
+
+.nav-link {
+  color: #fafdfd; /* Light text for links */
+  border-radius: 0; /* Square corners for a modern look */
+}
+.mb-1 {
+  background-color: #5a5a7e;
+}
+.nav-link:hover {
+  background-color: #4f8067; /* Slightly lighter background on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+.nav-link.active {
+  background-color:  #4f8067; /* Active link background color */
+  color: #ffffff; /* Active link text color */
+}
+
+/* Table styles */
+.table {
+  background-color: #5a5a7e;
+   /* Dark background for tables */
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #383838; /* Hover state for table rows */
+}
+
+.table th,
+.table td {
+  border: 1px solid #444444; /* Borders for table cells */
+  color: #dddddd; /* Light text for table cells */
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+/* Adjustments for padding and spacing */
+#content-wrapper {
+  padding: 1rem;
+}
+
+/* Ensure the text is appropriately aligned and displayed */
+.table thead th {
+  vertical-align: bottom;
+  text-align: left;
+}
+
+/* Custom scrollbar for sidebar */
+#sidebar-wrapper {
+  overflow-y: auto;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+#sidebar-wrapper::-webkit-scrollbar-thumb {
+  background: #007bff;
+}
+
+#sidebar-wrapper::-webkit-scrollbar-track {
+  background: #333333;
+}
+
+/* Ensure the inputs and selects match the overall dark theme */
+.form-control {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+.form-control:focus {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #007bff;
+}
+
+.custom-select {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
 }
