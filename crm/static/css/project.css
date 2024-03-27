@@ -12,12 +12,12 @@
   border-color: #eed3d7;
 }
 
-/* Ensures that the body starts with no margin and the rows are full width */
+
 
 body {
   background-color: #393652;
-  color: #ffffff; /* Light text */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  color: #ffffff; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 /* Sidebar styles */
@@ -27,63 +27,61 @@ body {
 }
 
 .nav-link {
-  color: #fafdfd; /* Light text for links */
-  border-radius: 0; /* Square corners for a modern look */
+  color: #fafdfd; 
+  border-radius: 0; 
 }
 .mb-1 {
   background-color: #5a5a7e;
 }
 .nav-link:hover {
-  background-color: #4f8067; /* Slightly lighter background on hover */
-  color: #ffffff; /* White text on hover */
+  background-color: #4f8067;
+  color: #ffffff; 
 }
 
 .nav-link.active {
-  background-color:  #4f8067; /* Active link background color */
-  color: #ffffff; /* Active link text color */
+  background-color:  #4f8067; 
+  color: #ffffff; 
 }
 
 /* Table styles */
 .table {
   background-color: #5a5a7e;
-   /* Dark background for tables */
+  
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
 }
 
 .table-hover tbody tr:hover {
-  background-color: #383838; /* Hover state for table rows */
+  background-color: #383838; 
 }
 
 .table th,
 .table td {
-  border: 1px solid #444444; /* Borders for table cells */
-  color: #dddddd; /* Light text for table cells */
+  border: 1px solid #444444; 
+  color: #dddddd; 
 }
 
 /* Button styles */
 .btn-primary {
-  background-color: #007bff; /* Primary button color */
+  background-color: #007bff;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* Darker on hover */
+  background-color: #0056b3; 
 }
 
-/* Adjustments for padding and spacing */
+
 #content-wrapper {
   padding: 1rem;
 }
 
-/* Ensure the text is appropriately aligned and displayed */
 .table thead th {
   vertical-align: bottom;
   text-align: left;
 }
 
-/* Custom scrollbar for sidebar */
 #sidebar-wrapper {
   overflow-y: auto;
 }
@@ -100,7 +98,6 @@ body {
   background: #333333;
 }
 
-/* Ensure the inputs and selects match the overall dark theme */
 .form-control {
   background-color: #333333;
   color: #ffffff;
