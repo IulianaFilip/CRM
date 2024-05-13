@@ -22,7 +22,7 @@ body {
 
 /* Sidebar styles */
 #sidebar-wrapper {
-  background-color: #393652;
+  background-color: #16162b;
   min-height: 100vh;
 }
 
@@ -34,12 +34,12 @@ body {
   background-color: #5a5a7e;
 }
 .nav-link:hover {
-  background-color: #4f8067; /* Slightly lighter background on hover */
+  background-color: #173a3a; /* Slightly lighter background on hover */
   color: #ffffff; /* White text on hover */
 }
 
 .nav-link.active {
-  background-color:  #4f8067; /* Active link background color */
+  background-color:  #173a3a !important; /* Active link background color */
   color: #ffffff; /* Active link text color */
 }
 
@@ -53,28 +53,29 @@ body {
 }
 
 .table-hover tbody tr:hover {
-  background-color: #383838; /* Hover state for table rows */
+  background-color: #173a3a !important; /* Hover state for table rows */
 }
 
 .table th,
 .table td {
-  border: 1px solid #444444; /* Borders for table cells */
+  border: 2px solid #221f1f; /* Borders for table cells */
   color: #dddddd; /* Light text for table cells */
 }
 
 /* Button styles */
 .btn-primary {
-  background-color: #007bff; /* Primary button color */
+  background-color: #5a5a7e; /* Primary button color */
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3; /* Darker on hover */
+  background-color: rgb(7, 19, 12); /* Darker on hover */
 }
 
 /* Adjustments for padding and spacing */
 #content-wrapper {
   padding: 1rem;
+  background-color: #16162b;
 }
 
 /* Ensure the text is appropriately aligned and displayed */
@@ -114,7 +115,64 @@ body {
 }
 
 .custom-select {
-  background-color: #333333;
-  color: #ffffff;
-  border: 1px solid #444444;
+  height: 36px;
+}
+
+.custom-select__content {
+  height: 100%;
+  background-color: #5a5a7e;
+  color: #fff;
+}
+
+td > input {
+  background-color: #5a5a7e !important;
+}
+
+td > input::placeholder {
+  color: #ffffff7c !important;
+}
+
+tbody > tr:last-child > td:first-child > input::placeholder {
+  color: #fff !important;
+}
+
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+
+}
+
+.maincontent {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.menu {
+  width: 250px;
+  margin-right: 0.5rem;
+  background-color: rgb(31, 29, 34);
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+
+.content {
+  width: 90%;
+  border-radius: 12px;
+  background-color:rgb(31, 29, 34);
+  padding: 0.5rem 1.5rem;
+}
+
+.search-form {
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.search-form__input {
+  margin-right: 0.5rem;
+}
+
+tr:hover {
+  background-color: #173a3a !important;
 }
