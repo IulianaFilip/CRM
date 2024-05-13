@@ -8,3 +8,4 @@ urlpatterns = [
     path("", home, name="home"),
     path("sales/", dashboard_view, name="dashboard"),
 ]
+
